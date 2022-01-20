@@ -28,6 +28,6 @@ lint-test-job:
     - .env
   script:
     - source .venv/bin/activate
-    - black src
+    - black --check src
   needs:
     - setup-python-env

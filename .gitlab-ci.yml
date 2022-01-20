@@ -1,0 +1,33 @@
+stages:
+  - runtime
+  - test
+
+.env:
+  image: python
+  tags:
+    - arm64
+
+
+setup-python-env:
+  stage: runtime
+  extends:
+    - .env
+  script:
+    - python3 -m venv .venv
+    - source .venv/bin/activate
+    - pip install -U pip setuptools wheel
+    - pip install -r requirements.txt
+  artifacts:
+    when: always
+    paths:
+      - .venv
+  
+lint-test-job:
+  stage: test
+  extends:
+    - .env
+  script:
+    - source .venv/bin/activate
+    - black src
+  needs:
+    - setup-python-env

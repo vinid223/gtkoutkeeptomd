@@ -1,10 +1,10 @@
+import argparse
 import errno
 import json
-import os
-from os import walk
-import argparse
 import logging
+import os
 import textwrap
+from os import walk
 
 
 def load_json_file(path: str):

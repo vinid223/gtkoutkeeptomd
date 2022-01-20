@@ -22,12 +22,32 @@ setup-python-env:
     paths:
       - .venv
   
-lint-test-job:
+lint-test:
   stage: test
   extends:
     - .env
   script:
     - source .venv/bin/activate
-    - black --check src
+    - black -l100 --check src --diff
+  needs:
+    - setup-python-env
+  
+security-test:
+  stage: test
+  extends:
+    - .env
+  script:
+    - source .venv/bin/activate
+    - bandit -r src
+  needs:
+    - setup-python-env
+  
+import-test:
+  stage: test
+  extends:
+    - .env
+  script:
+    - source .venv/bin/activate
+    - isort src --check --diff
   needs:
     - setup-python-env

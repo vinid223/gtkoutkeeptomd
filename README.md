@@ -27,7 +27,13 @@ Generate requirements
 Before pushing code
 
     # Reformat the code
-    black src
+    black -l100 src
+
+    # Check for security issue
+    bandir -r src
+
+    # Format import
+    isort src
 
 # How to run
 

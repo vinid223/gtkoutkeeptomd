@@ -1,0 +1,30 @@
+{
+  "color": "DEFAULT",
+  "isTrashed": false,
+  "isPinned": false,
+  "isArchived": false,
+  "listContent": [
+    {
+      "text": "Entrées",
+      "isChecked": false
+    },
+    {
+      "text": "Crevettes cocktail",
+      "isChecked": false
+    },
+    {
+      "text": "Autre ?",
+      "isChecked": true
+    },
+    {
+      "text": "Fromages",
+      "isChecked": true
+    },
+    {
+      "text": "Patates",
+      "isChecked": false
+    }
+  ],
+  "title": "",
+  "userEditedTimestampUsec": 1638813379325000
+}

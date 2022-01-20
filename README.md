@@ -16,6 +16,19 @@ Have python3 installed
     # Use virtual env
     source .venv/bin/activate
 
+    # Install python packages
+    pip install -U pip setuptools wheel
+    pip install -r requirements.txt
+
+Generate requirements
+
+    pip freeze > requirements.txt
+
+Before pushing code
+
+    # Reformat the code
+    black src
+
 # How to run
 
 Download the source code or the release file.

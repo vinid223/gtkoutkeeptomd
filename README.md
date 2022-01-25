@@ -30,7 +30,7 @@ Before pushing code
     black -l100 src
 
     # Check for security issue
-    bandir -r src
+    bandit -r src
 
     # Format import
     isort src
